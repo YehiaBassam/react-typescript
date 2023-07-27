@@ -12,6 +12,10 @@ import { User } from './components/hookss/User';
 import { Counter } from './components/hookss/Counter';
 // import { User as UserContext } from './components/hookss/context/advanced_example/User';
 import { DomRef } from './components/hookss/refs/DomRef';
+import { Private } from './components/compAsProps/Private';
+import { Profile } from './components/compAsProps/Profile';
+import Lists from './components/typess/Lists';
+import GenaricLists from './components/typess/genericType/GenaricLists';
 
 
 const person = {
@@ -44,6 +48,9 @@ const allPersons = [
     last: 'samer',
   },
 ]
+
+const list_1 = ['person_1', 'person_2', 'person_3', 'person_4'];
+const list_2 = [10, 20, 30, 40];
 
 function App() {
   return (
@@ -81,6 +88,16 @@ function App() {
         {/* <UserContext /> */}
         {/* useRef */}
         <DomRef />
+        
+        {/* Pass Component as props */}
+        <Private isLoggedIn={false} Component={Profile}/>
+        
+        {/* normal rendring array of objects */}
+        <Lists />
+        {/* Generic Type */}
+        <GenaricLists items={list_1} onClick={(item) => console.log(item)}/>
+        <GenaricLists items={list_2} onClick={(item) => console.log(item)}/>
+        <GenaricLists items={allPersons} onClick={(item) => console.log(item)}/>
 
       </div>
     </div>
