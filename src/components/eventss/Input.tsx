@@ -1,4 +1,4 @@
-import React from "react"
+// pass event oncange from input
 
 type InputProps = {
   handleChange: (e: React.ChangeEvent) => void,

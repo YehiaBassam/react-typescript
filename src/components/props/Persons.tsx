@@ -1,8 +1,8 @@
 // choose props type : primitive value or object or array
 
-type GreetingProps = {
-  name: string,
-  objTest: {
+type PersonProps = {
+  admin: string,
+  name: {
     first: string,
     last: string,
   },
@@ -12,11 +12,11 @@ type GreetingProps = {
   }[]
 }
 
-const Greetings = (props:  GreetingProps) => {
+const Persons = (props:  PersonProps) => {
   return (
     <>
-      <div>Greetings: { props.name }</div>
-      <div> { props.objTest.first } - { props.objTest.last }</div>
+      <div>Persons: { props.admin }</div>
+      <div> { props.name.first } - { props.name.last }</div>
 
       <ul>
         { props.persons.map(item => {
@@ -31,4 +31,4 @@ const Greetings = (props:  GreetingProps) => {
   )
 }
 
-export default Greetings
+export default Persons
